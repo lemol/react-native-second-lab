@@ -9,23 +9,65 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  TextInput,
+  Button,
+  View,
+  ScrollView
 } from 'react-native';
 
 class second extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: ''
+    };
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+      }}>
+        <View style={{height: 50, backgroundColor: 'powderblue'}}>
+          <Text>
+            {this.state.text.toUpperCase()}
+          </Text>
+        </View>
+        <View style={{flex: 1, backgroundColor: 'skyblue'}}>
+          <ScrollView>
+            <Text style={{fontSize: 40}}>Lemolsoft</Text>
+            <Text style={{fontSize: 40}}>Lemol-C Software</Text>
+            <Text style={{fontSize: 40}}>Lemolsoft</Text>
+            <Text style={{fontSize: 40}}>Lemolsoft</Text>
+            <Text style={{fontSize: 40}}>Lemol-C Software</Text>
+            <Text style={{fontSize: 40}}>Lemol-C Software</Text>
+            <Text style={{fontSize: 40}}>Lemolsoft</Text>
+            <Text style={{fontSize: 40}}>Lemolsoft</Text>
+            <Text style={{fontSize: 40}}>Lemol-C Software</Text>
+            <Text style={{fontSize: 40}}>Lemol-C Software</Text>
+            <Text style={{fontSize: 40}}>Lemolsoft</Text>
+            <Text style={{fontSize: 40}}>Lemolsoft</Text>
+            <Text style={{fontSize: 40}}>Lemol-C Software</Text>
+          </ScrollView>
+        </View>
+        <View style={{
+          flexDirection: 'row',
+          height: 50,
+          justifyContent: 'space-between'
+        }}>
+          <View style={{width: 50, backgroundColor: 'steelblue'}} />
+          <View style={{flex: 1, backgroundColor: 'powderblue'}}>
+            <TextInput
+              style={{}}
+              placeholder="Type here to translate!"
+              onChangeText={text => this.setState({text})}
+            />
+          </View>
+          <View style={{width: 50, backgroundColor: 'steelblue'}} />
+        </View>
       </View>
     );
   }
@@ -36,10 +78,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#FF00FF',
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 30,
     textAlign: 'center',
     margin: 10,
   },
